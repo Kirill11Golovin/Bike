@@ -1,6 +1,7 @@
 package com.IdeaProjects.hibernateintro.controller;
 
 import com.IdeaProjects.hibernateintro.model.Bike;
+import com.IdeaProjects.hibernateintro.model.Component;
 import com.IdeaProjects.hibernateintro.model.Role;
 import com.IdeaProjects.hibernateintro.model.User;
 import com.IdeaProjects.hibernateintro.service.BaseService;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@WebServlet("/")
+@WebServlet(urlPatterns = {"/demo/*"})
 public class UserServlet extends HttpServlet {
     private BaseService<User> service;
 
@@ -29,7 +30,7 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
-        String action = req.getServletPath();
+        String action = req.getPathInfo();
 
         try {
             switch (action) {
@@ -44,7 +45,8 @@ public class UserServlet extends HttpServlet {
                 case "/bikes" -> showBikes(req, resp);
                 case "/parts" -> showParts(req, resp);
                 case "/services" -> showServices(req, resp);
-                case "/cardbike" -> addCardBike (req, resp);
+                case "/cardBike" -> addCardBike(req, resp);
+                case "/cardComponent" -> addCardComponent(req, resp);
                 default -> listUser(req, resp);
             }
         } catch (ServletException | IOException e) {
@@ -67,7 +69,7 @@ public class UserServlet extends HttpServlet {
         }
         req.setAttribute("listUser", users);
         ServletContext servletContext = getServletContext();
-        RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/WEB-INF/pages/index.jsp");
+        RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/WEB-INF/pages/list-user.jsp");
         dispatcher.forward(req, resp);
     }
 
@@ -107,7 +109,7 @@ public class UserServlet extends HttpServlet {
             dispatcher.forward(req, resp);
 
         }
-        resp.sendRedirect("list");
+        resp.sendRedirect("/index.jsp");
     }
 
     private void logoutUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -140,33 +142,33 @@ public class UserServlet extends HttpServlet {
 
     private void registrationForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext servletContext = getServletContext();
-        RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/WEB-INF/pages/registration.jsp");
+        RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/registration.jsp");
         dispatcher.forward(req, resp);
     }
 
-    private void showBikes (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException  {
+    private void showBikes (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext servletContext = getServletContext();
         RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/WEB-INF/pages/bikes.jsp");
         dispatcher.forward(req, resp);
     }
 
-    private void showParts (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException  {
+    private void showParts (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext servletContext = getServletContext();
         RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/WEB-INF/pages/parts.jsp");
         dispatcher.forward(req, resp);
     }
 
-    private void showServices (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException  {
+    private void showServices (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext servletContext = getServletContext();
         RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/WEB-INF/pages/services.jsp");
         dispatcher.forward(req, resp);
     }
 
-    private void addCardBike (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException  {
-        String articule = req.getParameter("art");
+    private void addCardBike (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String article = req.getParameter("art");
         String name = req.getParameter("name");
         Bike bike = new Bike();
-        bike.setArticule(articule);
+        bike.setArticle(article);
         bike.setName(name);
         List<Bike> bikes =(List<Bike>) req.getSession().getAttribute("bikes");
         if (bikes == null) {
@@ -176,6 +178,23 @@ public class UserServlet extends HttpServlet {
         }
         ServletContext servletContext = getServletContext();
         RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/WEB-INF/pages/bikes.jsp");
+        dispatcher.forward(req, resp);
+    }
+
+    private void addCardComponent (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String article = req.getParameter("art");
+        String name = req.getParameter("name");
+        Component component = new Component();
+        component.setArticle(article);
+        component.setName(name);
+        List<Component> components =(List<Component>) req.getSession().getAttribute("components");
+        if (components == null) {
+            components = new ArrayList<>();
+            components.add(component);
+            req.getSession().setAttribute("components", components);
+        }
+        ServletContext servletContext = getServletContext();
+        RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/WEB-INF/pages/parts.jsp");
         dispatcher.forward(req, resp);
     }
 

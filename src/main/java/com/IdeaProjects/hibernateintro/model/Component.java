@@ -1,9 +1,9 @@
 package com.IdeaProjects.hibernateintro.model;
 
-public class Bike {
+public class Component {
 
-private String name;
-private String article;
+    private String name;
+    private String article;
 
     public String getName() {
         return name;
@@ -21,3 +21,4 @@ private String article;
         this.article = article;
     }
 }
+

@@ -30,7 +30,7 @@
       <a href="${pageContext.request.contextPath}/registration.jsp" class="user-account">
         <img src="${pageContext.request.contextPath}/img/User_light.svg" alt="Личный кабинет">
       </a>
-      <a href="#" class="shopping-cart">
+      <a href="${pageContext.request.contextPath}/shop-bag.jsp" class="shopping-cart">
         <img src="${pageContext.request.contextPath}/img/shop-bag.svg" alt="Корзина">
       </a>
     </div>
@@ -43,17 +43,17 @@
             </a>
           </li>
           <li class="header-list-item">
-            <a href="${pageContext.request.contextPath}/WEB-INF/pages/bikes.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/demo/bikes" class="head-link">
               Велосипеды
             </a>
           </li>
           <li class="header-list-item">
-            <a href="${pageContext.request.contextPath}/WEB-INF/pages/parts.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/demo/parts" class="head-link">
               Запчасти
             </a>
           </li>
           <li class="header-list-item">
-            <a href="${pageContext.request.contextPath}/WEB-INF/pages/services.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/demo/services" class="head-link">
               Сервис
             </a>
           </li>
@@ -77,7 +77,7 @@
               <h3 class="preview-item-title">
                 Запчасти
               </h3>
-              <a href="${pageContext.request.contextPath}/WEB-INF/pages/parts.jsp" target="_blank" class="link-item-more preview-item-more">
+              <a href="${pageContext.request.contextPath}/demo/parts" class="link-item-more preview-item-more">
                 Подробнее
               </a>
             </article>
@@ -85,7 +85,7 @@
               <h3 class="preview-item-title">
                 Сервис
               </h3>
-              <a href="${pageContext.request.contextPath}/WEB-INF/pages/services.jsp" target="_blank" class="link-item-more preview-item-more">
+              <a href="${pageContext.request.contextPath}/demo/services" class="link-item-more preview-item-more">
                 Подробнее
               </a>
             </article>
@@ -94,7 +94,7 @@
             <h3 class="preview-item-title preview-title-bikes">
               Велосипеды
             </h3>
-            <a href="${pageContext.request.contextPath}/WEB-INF/pages/bikes.jsp" class="link-item-more preview-item-more">
+            <a href="${pageContext.request.contextPath}/demo/bikes" class="link-item-more preview-item-more">
               Подробнее
             </a>
           </article>
@@ -216,7 +216,5 @@
     </div>
   </section>
 </main>
-
 </body>
-
 </html>

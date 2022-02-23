@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<html lang="ru">
+<!DOCTYPE html>
+
+<html>
 
 <head>
   <meta charset="UTF-8">
@@ -16,8 +18,8 @@
 <header class="header">
   <div class="container">
     <div class="header-main flex">
-      <a href="../../index.jsp" class="header-logo">
-        <img src="../../img/logo-bikes.png" alt="logo" class="header-logo">
+      <a href="${pageContext.request.contextPath}/index.jsp" class="header-logo">
+        <img src="${pageContext.request.contextPath}/img/logo-bikes.png" alt="logo" class="header-logo">
       </a>
       <form action="https://postman-echo.com/post" method="post" class="form-search">
         <input type="search" id="site-search" placeholder="Поиск по сайту" name="search-main" class="search-main"
@@ -28,38 +30,38 @@
       <a href="tel:+375291582487" class="header-contacts">
         +375 29 158 24 87
       </a>
-      <a href="#" class="user-account">
-        <img src="../../img/User_light.svg" alt="Личный кабинет">
+      <a href="${pageContext.request.contextPath}/registration.jsp" class="user-account">
+        <img src="${pageContext.request.contextPath}/img/User_light.svg" alt="Личный кабинет">
       </a>
       <a href="#" class="shopping-cart">
-        <img src="../../img/shop-bag.svg" alt="Корзина">
+        <img src="${pageContext.request.contextPath}/img/shop-bag.svg" alt="Корзина">
       </a>
     </div>
     <div class="header-navig flex">
       <nav class="header-nav">
         <ul class="header-list flex">
           <li class="header-list-item">
-            <a href="../../index.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/index.jsp" class="head-link">
               О нас
             </a>
           </li>
           <li class="header-list-item">
-            <a href="bikes.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/demo/bikes" class="head-link">
               Велосипеды
             </a>
           </li>
           <li class="header-list-item">
-            <a href="parts.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/demo/parts" class="head-link">
               Запчасти
             </a>
           </li>
           <li class="header-list-item">
-            <a href="services.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/demo/services.jsp" class="head-link">
               Сервис
             </a>
           </li>
           <li class="header-list-item">
-            <a href="../../index.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/index.jsp" class="head-link">
               Контакты
             </a>
           </li>
@@ -79,7 +81,7 @@
         </h2>
         <ul class="shop-bikes-item flex">
           <li class="shop-bikes-item-block">
-            <img src="../../img/bike-1.jpg" alt="bike-1">
+            <img src="${pageContext.request.contextPath}/img/bike-1.jpg" alt="bike-1">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Santa Cruz 5010 CC X01
@@ -88,13 +90,13 @@
               <p class="shop-bikes-item-cost">
                 <strong>&euro;6,549.00</strong>
               </p>
-              <a href="cardbike?art=stc001&name=Santa Cruz 5010 CC X01"><button class="btn">
+              <a href="cardBike?art=stc001&name=Santa Cruz 5010 CC X01"><button class="btn">
                 В корзину
               </button></a>
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img src="../../img/bike-2.jpg" alt="bike-2">
+            <img src="${pageContext.request.contextPath}/img/bike-2.jpg" alt="bike-2">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Cube TWO15 Pro
@@ -109,7 +111,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img src="../../img/bike-3.jpg" alt="bike-3">
+            <img src="${pageContext.request.contextPath}/img/bike-3.jpg" alt="bike-3">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Cube Stereo 150
@@ -124,7 +126,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img src="../../img/bike-4.jpg" alt="bike-4">
+            <img src="${pageContext.request.contextPath}/img/bike-4.jpg" alt="bike-4">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Cube Stereo 170 TM
@@ -139,7 +141,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img src="../../img/bike-5.jpg" alt="bike-5">
+            <img src="${pageContext.request.contextPath}/img/bike-5.jpg" alt="bike-5">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Radon Swoop 10.0
@@ -154,7 +156,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img src="../../img/bike-6.jpg" alt="bike-6">
+            <img src="${pageContext.request.contextPath}/img/bike-6.jpg" alt="bike-6">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Conway WME 7.9
@@ -194,10 +196,10 @@
           <a class="footer-descr-link" href="mailto:fuckingbikes@gmail.com">fuckingbikes@gmail.com</a>
         </div>
         <div class="footer-item-right flex">
-          <img src="../../img/twitter.svg" alt="twitter">
-          <img src="../../img/facebook.svg" alt="facebook">
-          <img src="../../img/social.svg" alt="vk">
-          <img src="../../img/instagram.svg" alt="instagram">
+          <img src="${pageContext.request.contextPath}/img/twitter.svg" alt="twitter">
+          <img src="${pageContext.request.contextPath}/img/facebook.svg" alt="facebook">
+          <img src="${pageContext.request.contextPath}/img/social.svg" alt="vk">
+          <img src="${pageContext.request.contextPath}/img/instagram.svg" alt="instagram">
         </div>
       </div>
     </div>

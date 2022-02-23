@@ -8,11 +8,11 @@
   </style>
 </head>
 <body>
-<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a href="../pages/index.html" class="header-logo">
-      <img src="../../img/logo-bikes.png" alt="logo" class="header-logo">
+    <a href="${pageContext.request.contextPath}/index.jsp" class="header-logo">
+      <img src="${pageContext.request.contextPath}/img/logo-bikes.png" alt="logo" class="header-logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,12 +20,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
-        </li>
       </ul>
       <form class="d-flex flex-row">
         <div class="p-2 bd-highlight">
@@ -33,24 +27,24 @@
             <c:choose>
               <c:when test="${sessionScope.user != null}">
                 <li class="nav-item">
-                  <a class="nav-link" href="logoutAction">Log out</a>
+                  <a class="nav-link" href="${pageContext.request.contextPath}/demo/logoutAction">Выйти</a>
                 </li>
               </c:when>
               <c:otherwise>
                 <li class="nav-item">
-                  <a class="nav-link" href="login">Log in</a>
+                  <a class="nav-link" href="${pageContext.request.contextPath}/demo/login">Войти</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="registration">Registration</a>
+                  <a class="nav-link" href="${pageContext.request.contextPath}/demo/registration">Регистрация</a>
                 </li>
               </c:otherwise>
             </c:choose>
             <li class="nav-item">
               <div class="d-flex">
                 <form action="search" method="post">
-                  <input class="form-control me-2" type="search" name="search" placeholder="Search"
-                         aria-label="Search">
-                  <button class="btn btn-outline-light" type="submit">Search</button>
+                  <input class="form-control me-2" type="search" name="Поиск" placeholder="Поиск"
+                         aria-label="Поиск">
+                  <button class="btn btn-outline-light" type="submit">Поиск</button>
                 </form>
               </div>
             </li>

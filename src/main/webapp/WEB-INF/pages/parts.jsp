@@ -1,14 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<html lang="ru">
+<!DOCTYPE html>
 
+<html>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
   <title>Fucking Bikes</title>
 </head>
 
@@ -16,8 +17,8 @@
 <header class="header">
   <div class="container">
     <div class="header-main flex">
-      <a href="../../index.jsp" class="header-logo">
-        <img src="../../img/logo-bikes.png" alt="logo" class="header-logo">
+      <a href="${pageContext.request.contextPath}/index.jsp" class="header-logo">
+        <img src="${pageContext.request.contextPath}/img/logo-bikes.png" alt="logo" class="header-logo">
       </a>
       <form action="https://postman-echo.com/post" method="post" class="form-search">
         <input type="search" id="site-search" placeholder="Поиск по сайту" name="search-main" class="search-main"
@@ -29,22 +30,22 @@
         +375 29 158 24 87
       </a>
       <a href="#" class="user-account">
-        <img src="../../img/User_light.svg" alt="Личный кабинет">
+        <img src="${pageContext.request.contextPath}/img/User_light.svg" alt="Личный кабинет">
       </a>
       <a href="#" class="shopping-cart">
-        <img src="../../img/shop-bag.svg" alt="Корзина">
+        <img src="${pageContext.request.contextPath}/img/shop-bag.svg" alt="Корзина">
       </a>
     </div>
     <div class="header-navig flex">
       <nav class="header-nav">
         <ul class="header-list flex">
           <li class="header-list-item">
-            <a href="../../index.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/index.jsp" class="head-link">
               О нас
             </a>
           </li>
           <li class="header-list-item">
-            <a href="bikes.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/demo/bikes" class="head-link">
               Велосипеды
             </a>
           </li>
@@ -54,12 +55,12 @@
             </a>
           </li>
           <li class="header-list-item">
-            <a href="services.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/demo/services" class="head-link">
               Сервис
             </a>
           </li>
           <li class="header-list-item">
-            <a href="../../index.jsp" class="head-link">
+            <a href="${pageContext.request.contextPath}/index.jsp" class="head-link">
               Контакты
             </a>
           </li>
@@ -86,7 +87,7 @@
                     <ul class="form-item flex">
                       <li class="form-item-title">
                         <p class="parts-title">Бренд</p>
-                        <select name="city">
+                        <select name="component">
                           <option value="Hope">Hope</option>
                           <option value="Shimano SLX">Shimano SLX</option>
                           <option value="Magura">Magura</option>
@@ -121,10 +122,10 @@
         </h2>
         <ul class="shop-bikes-item flex">
           <li class="shop-bikes-item-block">
-            <img class="parts-img" src="../../img/33.jpg" alt="bike-1">
+            <img class="parts-img" src="${pageContext.request.contextPath}/img/33.jpg" alt="bike-1">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
-                Fox Racing 40 K FLOAT 27.5"
+                Fox Racing 40 K FLOAT 27.5
               </p>
               <p class="section-desc article shop-bikes-item-desc">
                 Арт. fx001
@@ -138,10 +139,10 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img" src="../../img/34.jpg" alt="bike-2">
+            <img class="parts-img" src="${pageContext.request.contextPath}/img/34.jpg" alt="bike-2">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
-                Fox Racing 38 K FLOAT 29"
+                Fox Racing 38 K FLOAT 29
               </p>
               <p class="section-desc article shop-bikes-item-desc">
                 Арт. fx002
@@ -155,10 +156,10 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img" src="../../img/35.jpg" alt="bike-3">
+            <img class="parts-img" src="${pageContext.request.contextPath}/img/35.jpg" alt="bike-3">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
-                RockShox BoXXer Select RC 29"
+                RockShox BoXXer Select RC 29
               </p>
               <p class="section-desc article shop-bikes-item-desc">
                 Арт. rs001
@@ -172,7 +173,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img" src="../../img/36.jpg" alt="bike-4">
+            <img class="parts-img" src="${pageContext.request.contextPath}/img/36.jpg" alt="bike-4">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Fox Racing DHX2 Factory
@@ -189,7 +190,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img" src="../../img/37.jpg" alt="bike-5">
+            <img class="parts-img" src="${pageContext.request.contextPath}/img/37.jpg" alt="bike-5">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Fox Racing Float X Factory
@@ -206,7 +207,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img" src="../../img/38.jpg" alt="bike-6">
+            <img class="parts-img" src="${pageContext.request.contextPath}/img/38.jpg" alt="bike-6">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 RockShox Super Deluxe Coil Ultimate
@@ -223,7 +224,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img parts-fs" src="../../img/part-1.jpg" alt="bike-6">
+            <img class="parts-img parts-fs" src="${pageContext.request.contextPath}/img/part-1.jpg" alt="bike-6">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Hope Tech 3 V4
@@ -240,7 +241,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img parts-fs" src="../../img/part-2.jpg" alt="bike-6">
+            <img class="parts-img parts-fs" src="${pageContext.request.contextPath}/img/part-2.jpg" alt="bike-6">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Magura MT7 Pro
@@ -257,7 +258,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img parts-fs" src="../../img/part-3.jpg" alt="bike-6">
+            <img class="parts-img parts-fs" src="${pageContext.request.contextPath}/img/part-3.jpg" alt="bike-6">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Shimano XTR BR-M9120
@@ -274,7 +275,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img parts-fs" src="../../img/part-4.jpg" alt="bike-6">
+            <img class="parts-img parts-fs" src="${pageContext.request.contextPath}/img/part-4.jpg" alt="bike-6">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Shimano SAINT BR-M820-B
@@ -291,7 +292,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img parts-fs" src="../../img/part-5.jpg" alt="bike-6">
+            <img class="parts-img parts-fs" src="${pageContext.request.contextPath}/img/part-5.jpg" alt="bike-6">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Shimano SLX BR-M7120
@@ -308,7 +309,7 @@
             </div>
           </li>
           <li class="shop-bikes-item-block">
-            <img class="parts-img parts-fs" src="../../img/part-6.jpg" alt="bike-6">
+            <img class="parts-img parts-fs" src="${pageContext.request.contextPath}/img/part-6.jpg" alt="bike-6">
             <div class="shop-bikes-item-price">
               <p class="section-desc shop-bikes-item-desc">
                 Shimano XT BR-M8120
@@ -350,17 +351,15 @@
           <a class="footer-descr-link" href="mailto:fuckingbikes@gmail.com">fuckingbikes@gmail.com</a>
         </div>
         <div class="footer-item-right flex">
-          <img src="../../img/twitter.svg" alt="twitter">
-          <img src="../../img/facebook.svg" alt="facebook">
-          <img src="../../img/social.svg" alt="vk">
-          <img src="../../img/instagram.svg" alt="instagram">
+          <img src="${pageContext.request.contextPath}/img/twitter.svg" alt="twitter">
+          <img src="${pageContext.request.contextPath}/img/facebook.svg" alt="facebook">
+          <img src="${pageContext.request.contextPath}/img/social.svg" alt="vk">
+          <img src="${pageContext.request.contextPath}/img/instagram.svg" alt="instagram">
         </div>
       </div>
     </div>
   </section>
 </main>
-
 </body>
-
 </html>
 

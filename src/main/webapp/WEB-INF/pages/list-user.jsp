@@ -1,10 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
   <title>User Management Application</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
   <style>
     <%@ include file="../../css/styles.css" %>
   </style>
@@ -13,7 +15,7 @@
 <%@ include file="../fragments/navigation.jsp" %>
 <div class="container">
   <table class="table table-hover caption-top justify-content-center">
-    <caption>List of Users</caption>
+    <caption>Список пользователей</caption>
     <thead>
     <tr>
       <th class="text-center" scope="col">#</th>
@@ -38,8 +40,8 @@
         <c:if test="${sessionScope.userRole.equals('ADMIN')}">
           <td class="text-center align-middle">
             <div class="btn-group" role="group" aria-label="Basic example">
-              <a href="edit?id=${user.id}" class="btn btn-primary" role="button">Edit</a>
-              <a href="delete?id=${user.id}" class="btn btn-secondary" role="button">Delete</a>
+              <a href="${pageContext.request.contextPath}/demo/edit?id=${user.id}" class="btn btn-primary" role="button">Изменить</a>
+              <a href="${pageContext.request.contextPath}/demo/delete?id=${user.id}" class="btn btn-secondary" role="button">Удалить</a>
             </div>
           </td>
         </c:if>
